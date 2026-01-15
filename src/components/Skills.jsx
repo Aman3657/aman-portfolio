@@ -12,7 +12,7 @@ const skillCategories = [
     },
     {
         title: 'Tools & Platforms',
-        skills: ['ChatGPT', 'Gemini', 'Canva', 'Zoho', 'Vee3', 'Capcut', 'VS Code', 'Veo3']
+        skills: ['ChatGPT', 'Gemini', 'Canva', 'Zoho', 'Veo3', 'Capcut', 'VS Code']
     },
     {
         title: 'Professional Skills',

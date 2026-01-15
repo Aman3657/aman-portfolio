@@ -22,7 +22,7 @@ const projects = [
     {
         title: 'Employer & Candidate Dashboard',
         category: 'Full Stack / WordPress',
-        description: 'Developed a custom two-sided dashboard for employers and candidates using PHP and WordPress. Integrated with Gemini.',
+        description: 'Developed a custom two-sided dashboard for employers and candidates using PHP, WordPress, Gemini, and Code Snippets Plugin.',
         tech: ['Custom PHP', 'WordPress', 'Gemini', 'Code Snippets'],
         link: 'http://jobbinge.in',
         image: 'https://placehold.co/600x400/1a1a2e/FFF?text=Dashboard+System'

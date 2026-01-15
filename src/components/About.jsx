@@ -31,10 +31,7 @@ const About = () => {
                         className="space-y-6"
                     >
                         <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                            Dedicated <span className="text-gray-900 dark:text-white font-semibold">Computer Science undergraduate</span> with experience in Home tuition, AI animation, IT support, WordPress management and Freelancing.
-                        </p>
-                        <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-                            Seeking a <span className="text-neon-purple">Non-Teaching / Academic Support / IT role</span> in a reputed educational institution like Sunbeam Group, where I can contribute to both student support and digital growth.
+                            Dedicated <span className="text-gray-900 dark:text-white font-semibold">Computer Science undergraduate</span> with experience in AI animation, IT support, WordPress management, Home tuition and Freelancing.
                         </p>
 
                         <div className="pt-4">
