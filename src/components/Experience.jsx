@@ -6,38 +6,34 @@ const experiences = [
     {
         role: 'Operations & Platform Intern',
         company: 'Job Binge',
-        period: 'Jun 2025 – Present',
+        period: 'April 2025 – Nov 2025',
         description: [
-            'Coordinated intern schedules and optimized daily workflows.',
-            'Assisted in managing email campaigns for better engagement.',
-            'Managed WordPress websites, databases (PHP/MySQL), ensuring regular updates & UX improvements.'
+            'Coordinated Intern schedules and workflows for smooth platform operations.',
+            'Managed WordPress websites, databases (PHP/MySQL), and site updates to enhance user experience.'
         ]
     },
     {
-        role: 'Generative AI Artist',
-        company: 'Fiverr',
+        role: 'Generative AI Artist | Graphic Designer',
+        company: 'Fiverr (Freelance)',
         period: 'Dec 2022 – Present',
         description: [
-            'Delivered 20+ AI artwork projects with 98% client satisfaction.',
-            'Specialized in generative visual design using advanced AI tools.',
-            'Communicated effectively with global clients to meet creative requirements.'
+            'Delivered 20+ AI art & animation projects with 98% client satisfaction across multiple creative services.'
         ]
     },
     {
-        role: 'Freelance WordPress Developer',
-        company: 'Self-Employed',
-        period: '2022 – Present',
+        role: '.Tech Support',
+        company: 'GAO Tek Inc.',
+        period: 'June 2024 – August 2024',
         description: [
-            'Developed several custom client websites using WordPress & Elementor.',
-            'Expertise in WooCommerce product management, hosting configuration, and site security.',
-            'Optimized site performance for better SEO rankings.'
+            'Manage WordPress and WooCommerce Product.',
+            'Excel Management Management.'
         ]
     }
 ];
 
 const Experience = () => {
     return (
-        <section id="experience" className="py-20 bg-dark-bg">
+        <section id="experience" className="py-20 bg-gray-50 dark:bg-dark-bg transition-colors duration-300">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -51,7 +47,7 @@ const Experience = () => {
 
                 <div className="max-w-4xl mx-auto relative">
                     {/* Timeline Line */}
-                    <div className="absolute left-0 md:left-1/2 h-full w-0.5 bg-white/10 transform -translate-x-1/2 hidden md:block"></div>
+                    <div className="absolute left-0 md:left-1/2 h-full w-0.5 bg-gray-300 dark:bg-white/10 transform -translate-x-1/2 hidden md:block"></div>
 
                     {experiences.map((exp, index) => (
                         <motion.div
@@ -68,16 +64,16 @@ const Experience = () => {
                             <div className="flex-1 hidden md:block"></div>
 
                             <div className="flex-1">
-                                <div className="p-6 rounded-2xl bg-dark-card border border-white/5 hover:border-neon-purple/30 transition-all shadow-lg hover:shadow-neon-purple/10">
+                                <div className="p-6 rounded-2xl bg-white dark:bg-dark-card border border-gray-200 dark:border-white/5 hover:border-neon-purple/30 transition-all shadow-lg hover:shadow-neon-purple/10">
                                     <div className="flex items-center gap-2 mb-2 text-neon-blue text-sm font-semibold uppercase tracking-wide">
                                         <Briefcase size={16} />
                                         {exp.period}
                                     </div>
-                                    <h3 className="text-xl font-bold text-white mb-1">{exp.role}</h3>
-                                    <div className="text-gray-400 mb-4">{exp.company}</div>
+                                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">{exp.role}</h3>
+                                    <div className="text-gray-500 dark:text-gray-400 mb-4">{exp.company}</div>
                                     <ul className="space-y-2">
                                         {exp.description.map((item, i) => (
-                                            <li key={i} className="text-gray-300 text-sm flex gap-2">
+                                            <li key={i} className="text-gray-600 dark:text-gray-300 text-sm flex gap-2">
                                                 <span className="text-neon-purple mt-1">•</span>
                                                 {item}
                                             </li>

@@ -4,14 +4,14 @@ import { User, Code, Globe, Zap } from 'lucide-react';
 
 const About = () => {
     const stats = [
-        { icon: <Code size={24} />, value: '2.5+', label: 'Years Experience' },
-        { icon: <Globe size={24} />, value: '20+', label: 'Completed Orders' },
-        { icon: <Zap size={24} />, value: '20+', label: 'AI Projects' },
-        { icon: <User size={24} />, value: '98%', label: 'Client Satisfaction' },
+        { icon: <Code size={24} />, value: '20+', label: 'Projects Delivered' },
+        { icon: <Globe size={24} />, value: '2.5+', label: 'Years Experience' },
+        { icon: <Zap size={24} />, value: '98%', label: 'Client Satisfaction' },
+        { icon: <User size={24} />, value: '20+', label: 'Happy Clients' },
     ];
 
     return (
-        <section id="about" className="py-20 bg-dark-bg relative">
+        <section id="about" className="py-20 bg-gray-50 dark:bg-dark-bg relative transition-colors duration-300">
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -30,21 +30,18 @@ const About = () => {
                         viewport={{ once: true }}
                         className="space-y-6"
                     >
-                        <p className="text-gray-300 text-lg leading-relaxed">
-                            I am a <span className="text-white font-semibold">WordPress Developer</span> with over <span className="text-neon-purple">2.5 years of freelancing experience</span>, specializing in building high-performance websites and WooCommerce platforms.
+                        <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                            Dedicated <span className="text-gray-900 dark:text-white font-semibold">Computer Science undergraduate</span> with experience in Home tuition, AI animation, IT support, WordPress management and Freelancing.
                         </p>
-                        <p className="text-gray-300 text-lg leading-relaxed">
-                            As a <span className="text-white font-semibold">Generative AI Artist</span> and Engineer, I've successfully delivered 20+ client orders with high satisfaction. My expertise extends to platform operations, where I leverage tools like <span className="text-neon-blue">ChatGPT, Gemini, and N8N</span> to automate workflows and scale products.
-                        </p>
-                        <p className="text-gray-300 text-lg leading-relaxed">
-                            Passionate about bridging the gap between traditional development and emerging AI technologies, I thrive in roles that require problem-solving, coordination, and technical innovation.
+                        <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                            Seeking a <span className="text-neon-purple">Non-Teaching / Academic Support / IT role</span> in a reputed educational institution like Sunbeam Group, where I can contribute to both student support and digital growth.
                         </p>
 
                         <div className="pt-4">
-                            <h4 className="text-white font-semibold mb-3">Key Competencies:</h4>
+                            <h4 className="text-gray-900 dark:text-white font-semibold mb-3">Key Competencies:</h4>
                             <ul className="flex flex-wrap gap-3">
                                 {['WordPress Dev', 'Generative AI', 'Platform Ops', 'Automation', 'React / JS'].map(skill => (
-                                    <li key={skill} className="px-4 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300">
+                                    <li key={skill} className="px-4 py-1 rounded-full border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 text-sm text-gray-700 dark:text-gray-300 shadow-sm dark:shadow-none">
                                         {skill}
                                     </li>
                                 ))}
@@ -60,10 +57,10 @@ const About = () => {
                         className="grid grid-cols-2 gap-4"
                     >
                         {stats.map((stat, index) => (
-                            <div key={index} className="p-6 bg-dark-card border border-white/5 rounded-2xl hover:border-neon-blue/30 transition-all hover:-translate-y-1 group">
+                            <div key={index} className="p-6 bg-white dark:bg-dark-card border border-gray-200 dark:border-white/5 rounded-2xl hover:border-neon-blue/30 transition-all hover:-translate-y-1 group shadow-lg dark:shadow-none">
                                 <div className="text-neon-blue mb-4 group-hover:scale-110 transition-transform">{stat.icon}</div>
-                                <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                                <div className="text-sm text-gray-400">{stat.label}</div>
+                                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">{stat.value}</div>
+                                <div className="text-sm text-gray-500 dark:text-gray-400">{stat.label}</div>
                             </div>
                         ))}
                     </motion.div>

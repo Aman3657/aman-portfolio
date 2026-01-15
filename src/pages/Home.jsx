@@ -5,7 +5,6 @@ import Experience from '../components/Experience';
 import Projects from '../components/Projects';
 import Skills from '../components/Skills';
 import Education from '../components/Education';
-import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 
 const Home = () => {
@@ -17,7 +16,6 @@ const Home = () => {
             <Projects />
             <Skills />
             <Education />
-            <Testimonials />
             <Contact />
         </div>
     );

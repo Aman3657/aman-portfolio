@@ -26,6 +26,13 @@ const Navbar = () => {
 
     const isHome = location.pathname === '/';
 
+    // Define text color based on scroll state
+    // If not scrolled and on home (transparent over video), force white.
+    // Otherwise (scrolled or other pages), use theme colors.
+    const navTextClass = (scrolled || !isHome)
+        ? 'text-gray-700 dark:text-gray-300 hover:text-neon-blue dark:hover:text-neon-blue'
+        : 'text-white hover:text-neon-blue';
+
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
@@ -59,7 +66,7 @@ const Navbar = () => {
         <motion.nav
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'py-4 bg-white/10 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-white/10 shadow-lg' : 'py-6 bg-transparent'}`}
+            className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'py-4 bg-white/90 dark:bg-dark-bg/90 backdrop-blur-md border-b border-gray-200 dark:border-white/10 shadow-lg' : 'py-6 bg-transparent'}`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 <RouterLink to="/" className="text-2xl font-bold font-outfit bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent cursor-pointer">
@@ -71,7 +78,7 @@ const Navbar = () => {
                     {navLinks.map((link) => (
                         <div key={link.name} className="relative group">
                             {link.isDropdown ? (
-                                <button className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-neon-blue dark:hover:text-neon-blue transition-colors font-medium">
+                                <button className={`flex items-center gap-1 transition-colors font-medium ${navTextClass}`}>
                                     {link.name}
                                     <ChevronDown size={16} />
 
@@ -95,7 +102,7 @@ const Navbar = () => {
                                     to={link.to}
                                     smooth={true}
                                     duration={500}
-                                    className="relative text-gray-700 dark:text-gray-300 hover:text-neon-blue dark:hover:text-neon-blue transition-colors cursor-pointer group font-medium"
+                                    className={`relative transition-colors cursor-pointer group font-medium ${navTextClass}`}
                                     onClick={() => handleNavClick(link)}
                                 >
                                     {link.name}
@@ -104,7 +111,7 @@ const Navbar = () => {
                             ) : (
                                 <RouterLink
                                     to={link.to}
-                                    className={`relative transition-colors cursor-pointer group font-medium ${location.pathname === link.to ? 'text-neon-blue' : 'text-gray-700 dark:text-gray-300 hover:text-neon-blue dark:hover:text-neon-blue'}`}
+                                    className={`relative transition-colors cursor-pointer group font-medium ${location.pathname === link.to ? 'text-neon-blue' : navTextClass}`}
                                 >
                                     {link.name}
                                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-blue transition-all group-hover:w-full"></span>
