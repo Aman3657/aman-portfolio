@@ -5,13 +5,12 @@ const AvatarHero = () => {
     const row1Ref = useRef(null);
     const row2Ref = useRef(null);
 
-    // Combine both sets of images for variety
-    const redImages = ['unnamed.jpg', 'unnamed (1).jpg', 'unnamed (2).jpg', 'unnamed (3).jpg', 'unnamed (4).jpg', 'unnamed (5).jpg'];
-    const baseImages = [21, 23, 25, 26, 27, 28, 29, 30, 31];
+    // Use the 15 uploaded user images
+    const userAvatars = Array.from({ length: 15 }, (_, i) => `${i + 1}.jpg`);
 
-    // Simplified lists for testing stability
-    const row1Images = [...redImages, ...baseImages];
-    const row2Images = [...baseImages, ...redImages];
+    // Repeat elements to create the scrolling row effect
+    const row1Images = [...userAvatars.slice(0, 8), ...userAvatars.slice(0, 8)];
+    const row2Images = [...userAvatars.slice(8, 15), ...userAvatars.slice(8, 15)];
 
     /*
     useEffect(() => {
@@ -54,8 +53,8 @@ const AvatarHero = () => {
                             className={`w-32 h-44 md:w-48 md:h-64 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/10 shadow-lg transition-all duration-300 ${i % 3 === 0 ? 'opacity-20 hover:opacity-100' : 'opacity-100 hover:scale-105'}`}
                         >
                             <img
-                                src={typeof img === 'string' ? `/avatars/red/${img}` : `/avatars/unnamed (${img}).jpg`}
-                                alt="Avatar"
+                                src={`/avatars/${img}`}
+                                alt="Avatar graphics image"
                                 className="w-full h-full object-cover"
                             />
                         </div>
@@ -70,8 +69,8 @@ const AvatarHero = () => {
                             className={`w-32 h-44 md:w-48 md:h-64 flex-shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/10 shadow-lg transition-all duration-300 ${i % 3 === 0 ? 'opacity-20 hover:opacity-100' : 'opacity-100 hover:scale-105'}`}
                         >
                             <img
-                                src={typeof img === 'string' ? `/avatars/red/${img}` : `/avatars/unnamed (${img}).jpg`}
-                                alt="Avatar"
+                                src={`/avatars/${img}`}
+                                alt="Avatar graphics image"
                                 className="w-full h-full object-cover"
                             />
                         </div>
@@ -91,8 +90,8 @@ const AvatarHero = () => {
                     <span className="text-neon-blue font-semibold tracking-wider text-sm md:text-base">NEW LAUNCH</span>
                 </div>
                 <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 dark:from-white dark:via-gray-200 dark:to-gray-500 drop-shadow-sm dark:drop-shadow-none">
-                    10 - 100 Unique <br />
-                    <span className="text-neon-purple drop-shadow-[0_0_15px_rgba(188,19,254,0.3)]">AI Avatars</span>
+                    Avatar Graphics <br />
+                    <span className="text-neon-purple drop-shadow-[0_0_15px_rgba(188,19,254,0.3)]">Images</span>
                 </h1>
                 <p className="text-lg md:text-2xl text-gray-800 dark:text-gray-300 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-4">
                     Transform your selfies into hyper-realistic, cinematic, and artistic AI avatars.

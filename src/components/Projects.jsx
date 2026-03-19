@@ -11,14 +11,7 @@ const projects = [
         link: 'https://www.sahntechsolution.com',
         image: 'https://placehold.co/600x400/2a2a3e/FFF?text=SahntechSolution'
     },
-    {
-        title: 'Resume Builder App',
-        category: 'Web Application',
-        description: 'Developed and launched an AI-based resume builder web app for automated resume generation. Streamlined the resume creation process.',
-        tech: ['React', 'AI Integration', 'Web App'],
-        link: 'https://resume-builder-by-aman.vercel.app',
-        image: 'https://placehold.co/600x400/0a0a0a/FFF?text=AI+Resume+Builder'
-    },
+
     {
         title: 'Employer & Candidate Dashboard',
         category: 'Full Stack / WordPress',

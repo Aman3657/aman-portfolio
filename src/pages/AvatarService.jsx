@@ -13,14 +13,10 @@ const AvatarService = () => {
     const galleryRow3Ref = useRef(null);
     const galleryRow4Ref = useRef(null);
 
-    // Generate array of 12 images for testing
-    const realityImages = Array.from({ length: 12 }, (_, i) => `reality-${i + 1}.webp`);
-
-    // Split into 4 rows
-    const row1 = realityImages.slice(0, 3);
-    const row2 = realityImages.slice(3, 6);
-    const row3 = realityImages.slice(6, 9);
-    const row4 = realityImages.slice(9, 12);
+    // Use the 15 uploaded user images
+    const userAvatars = Array.from({ length: 15 }, (_, i) => `${i + 1}.jpg`);
+    // Show them in the grid
+    const galleryImages = userAvatars;
 
     /*
     useEffect(() => {
@@ -139,10 +135,10 @@ const AvatarService = () => {
                 </h2>
 
                 <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 opacity-90">
-                        {realityImages.map((img, i) => (
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 opacity-90">
+                        {galleryImages.map((img, i) => (
                             <div key={`gallery-${i}`} className="w-full aspect-[3/4] rounded-xl overflow-hidden border border-white/10 hover:border-neon-blue/50 transition-all duration-300 hover:scale-105">
-                                <img src={`/avatars/reality/${img}`} className="w-full h-full object-cover" alt={`Gallery ${i + 1}`} />
+                                <img src={`/avatars/${img}`} className="w-full h-full object-cover" alt={`Gallery ${i + 1}`} />
                             </div>
                         ))}
                     </div>

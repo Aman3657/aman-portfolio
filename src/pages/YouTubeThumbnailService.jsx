@@ -4,22 +4,15 @@ import { Link } from 'react-scroll';
 import Contact from '../components/Contact';
 
 const thumbnails = [
-    '1Xkt-P9po0A-HD.jpg',
-    'unnamed (16).jpg',
-    'unnamed (17).jpg',
-    'unnamed (18).jpg',
-    'unnamed (19).jpg',
-    'unnamed (20).jpg',
-    'unnamed (22).jpg',
-    'unnamed (62).jpg',
-    'unnamed (63).jpg',
-    'unnamed (64).jpg',
-    'unnamed (65).jpg',
-    'unnamed (66).jpg',
-    'unnamed (67).jpg',
-    'unnamed (68).jpg',
-    'unnamed (69).jpg',
-    'unnamed (70).jpg',
+    '/thumbnails/thumb1.jpg',
+    '/thumbnails/thumb2.jpg',
+    '/thumbnails/thumb3.png',
+    '/thumbnails/thumb4.jpeg',
+    '/thumbnails/thumb5.png',
+    '/thumbnails/thumb6.png',
+    '/thumbnails/thumb7.png',
+    '/thumbnails/thumb8.jpg',
+    '/thumbnails/thumb9.jpg',
 ];
 
 const YouTubeThumbnailService = () => {
@@ -33,7 +26,7 @@ const YouTubeThumbnailService = () => {
                     className="text-center mb-16"
                 >
                     <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
-                        YouTube Thumbnail Design
+                        Graphics Thumbnail
                     </h1>
                     <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                         Boost your Click-Through Rate (CTR) with high-quality, eye-catching thumbnails designed to grab attention.
@@ -55,9 +48,9 @@ const YouTubeThumbnailService = () => {
                             className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-white/10"
                         >
                             <div className="aspect-video bg-gray-200 dark:bg-gray-800 relative z-10 w-full h-full">
-                                {/* Using standard img for now, assuming public/thumbnails path */}
+                                {/* Using standard img for now, assuming paths are complete */}
                                 <img
-                                    src={`/thumbnails/${src}`}
+                                    src={src}
                                     alt={`Thumbnail sample ${index + 1}`}
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                                     loading="lazy"

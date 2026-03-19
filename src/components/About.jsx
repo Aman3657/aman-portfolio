@@ -4,6 +4,7 @@ import { User, Code, Globe, Zap } from 'lucide-react';
 
 const About = () => {
     const stats = [
+        // Updated stats to match final resume
         { icon: <Code size={24} />, value: '20+', label: 'Projects Delivered' },
         { icon: <Globe size={24} />, value: '2.5+', label: 'Years Experience' },
         { icon: <Zap size={24} />, value: '98%', label: 'Client Satisfaction' },
