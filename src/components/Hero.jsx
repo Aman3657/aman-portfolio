@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, ExternalLink, Download } from 'lucide-react';
+import { Github, Linkedin, Mail, Download } from 'lucide-react';
 
 const Hero = () => {
     return (
@@ -63,9 +63,6 @@ const Hero = () => {
                         </a>
                         <a href="mailto:amanjobs1234@gmail.com" className="text-gray-400 hover:text-neon-purple transition-colors hover:scale-110 transform">
                             <Mail size={24} />
-                        </a>
-                        <a href="https://aman-portfoliopro.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform">
-                            <ExternalLink size={24} />
                         </a>
                     </div>
                 </motion.div>
