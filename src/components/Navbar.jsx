@@ -47,8 +47,9 @@ const Navbar = () => {
             name: 'Services',
             isDropdown: true,
             items: [
-                { name: 'Graphics Thumbnail', to: '/youtube-thumbnails' },
-                { name: 'AI Avatars', to: '/avatar-service' }
+                { name: 'Graphic Design', to: '/design' },
+                { name: 'AI Avatars', to: '/avatar-service' },
+                { name: 'AI Animation', to: '/ai-animation' }
             ]
         },
     ];

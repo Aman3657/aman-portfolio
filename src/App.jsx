@@ -7,6 +7,7 @@ import Blog from './pages/Blog';
 import AvatarService from './pages/AvatarService';
 
 import YouTubeThumbnailService from './pages/YouTubeThumbnailService';
+import AiAnimationService from './pages/AiAnimationService';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -26,7 +27,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/avatar-service" element={<AvatarService />} />
-          <Route path="/youtube-thumbnails" element={<YouTubeThumbnailService />} />
+          <Route path="/design" element={<YouTubeThumbnailService />} />
+          <Route path="/ai-animation" element={<AiAnimationService />} />
           <Route path="*" element={<Home />} />
         </Routes>
         <Footer />

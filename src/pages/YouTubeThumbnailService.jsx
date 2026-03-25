@@ -4,6 +4,11 @@ import { Link } from 'react-scroll';
 import Contact from '../components/Contact';
 
 const thumbnails = [
+    '/thumbnails/thumb11.png',
+    '/thumbnails/thumb12.png',
+    '/thumbnails/thumb13.png',
+    '/thumbnails/thumb14.png',
+    '/thumbnails/thumb15.png',
     '/thumbnails/thumb1.jpg',
     '/thumbnails/thumb2.jpg',
     '/thumbnails/thumb3.png',
@@ -26,10 +31,10 @@ const YouTubeThumbnailService = () => {
                     className="text-center mb-16"
                 >
                     <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-neon-blue to-neon-purple bg-clip-text text-transparent">
-                        Graphics Thumbnail
+                        Design Portfolio
                     </h1>
                     <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                        Boost your Click-Through Rate (CTR) with high-quality, eye-catching thumbnails designed to grab attention.
+                        High-quality graphic designs, certificates, and YouTube thumbnails crafted to stand out.
                     </p>
                     <div className="mt-8">
                         <a href="https://www.fiverr.com/aman_20y/design-youtube-thumbnails-using-ai" target="_blank" rel="noopener noreferrer" className="px-8 py-3 bg-neon-blue text-black font-semibold rounded-full hover:bg-neon-purple hover:text-white transition-all shadow-[0_0_15px_rgba(0,243,255,0.3)]">

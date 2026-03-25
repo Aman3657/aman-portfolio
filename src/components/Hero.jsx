@@ -51,7 +51,7 @@ const Hero = () => {
                         <a href="#projects" className="px-8 py-3 bg-gradient-to-r from-neon-blue to-neon-purple text-white font-semibold rounded-full hover:shadow-[0_0_20px_rgba(0,243,255,0.4)] transition-all">
                             View Projects
                         </a>
-                        <a href="/resume.pdf" download className="px-8 py-3 border border-white/20 text-white font-semibold rounded-full hover:bg-white/5 transition-all flex items-center gap-2 group">
+                        <a href="/Aman_Kumar_Gupta_Resume.pdf" download="Aman_Kumar_Gupta_Resume.pdf" className="px-8 py-3 border border-white/20 text-white font-semibold rounded-full hover:bg-white/5 transition-all flex items-center gap-2 group">
                             <Download size={18} className="group-hover:translate-y-1 transition-transform" />
                             Download Resume
                         </a>
@@ -120,6 +120,20 @@ const Hero = () => {
                                 <div className="font-bold text-lg text-gray-900 dark:text-white">20+ Delivered</div>
                             </div>
                         </motion.div>
+                        <motion.a
+                            href="/design"
+                            animate={{ y: [0, -8, 0] }}
+                            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                            className="absolute top-1/2 -right-8 md:-right-16 bg-white/90 dark:bg-dark-card border border-gray-200 dark:border-white/10 p-3 md:p-4 rounded-xl shadow-lg flex items-center gap-3 backdrop-blur-md hover:border-neon-purple/50 transition-colors group cursor-pointer z-20"
+                        >
+                            <div className="w-10 h-10 md:w-12 md:h-12 bg-pink-500/20 rounded-full flex items-center justify-center text-pink-600 dark:text-pink-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+                            </div>
+                            <div>
+                                <div className="font-bold text-md md:text-lg text-gray-900 dark:text-white group-hover:text-neon-purple transition-colors">Graphic Design</div>
+                                <div className="text-xs md:text-sm text-gray-600 dark:text-gray-400 font-medium whitespace-nowrap">View Services</div>
+                            </div>
+                        </motion.a>
                     </div>
                 </motion.div>
             </div>
