@@ -9,6 +9,8 @@ const thumbnails = [
     '/thumbnails/thumb13.png',
     '/thumbnails/thumb14.png',
     '/thumbnails/thumb15.png',
+    '/thumbnails/thumb16.png',
+    '/thumbnails/thumb17.png',
     '/thumbnails/thumb1.jpg',
     '/thumbnails/thumb2.jpg',
     '/thumbnails/thumb3.png',
