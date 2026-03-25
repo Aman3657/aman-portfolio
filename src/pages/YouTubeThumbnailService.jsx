@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-scroll';
 import Contact from '../components/Contact';
 
@@ -23,6 +23,7 @@ const thumbnails = [
 ];
 
 const YouTubeThumbnailService = () => {
+    const [selectedImage, setSelectedImage] = useState(null);
     return (
         <div className="pt-24 pb-16 min-h-screen">
             <div className="container mx-auto px-6">
@@ -63,8 +64,11 @@ const YouTubeThumbnailService = () => {
                                     loading="lazy"
                                 />
                             </div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 flex items-end justify-center pb-6">
-                                <span className="text-white font-medium px-4 py-2 bg-neon-purple/80 rounded-full backdrop-blur-sm">
+                            <div 
+                                className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 flex items-end justify-center pb-6 cursor-pointer"
+                                onClick={() => setSelectedImage(src)}
+                            >
+                                <span className="text-white font-medium px-4 py-2 bg-neon-purple/80 rounded-full backdrop-blur-sm pointer-events-none">
                                     View Full Size
                                 </span>
                             </div>
@@ -85,6 +89,29 @@ const YouTubeThumbnailService = () => {
                     </Link>
                 </motion.div>
             </div>
+
+            {/* Lightbox Overlay */}
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => setSelectedImage(null)}
+                        className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 cursor-pointer"
+                    >
+                        <motion.img
+                            initial={{ scale: 0.9 }}
+                            animate={{ scale: 1 }}
+                            exit={{ scale: 0.9 }}
+                            src={selectedImage}
+                            alt="Full size view"
+                            className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg shadow-2xl"
+                        />
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             <Contact />
         </div>
     );
