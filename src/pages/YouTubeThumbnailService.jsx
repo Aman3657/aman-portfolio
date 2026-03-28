@@ -20,6 +20,7 @@ const thumbnails = [
     '/thumbnails/thumb7.png',
     '/thumbnails/thumb8.jpg',
     '/thumbnails/thumb9.jpg',
+    '/thumbnails/form image.jpg',
 ];
 
 const YouTubeThumbnailService = () => {
