@@ -1,23 +1,38 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Download } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, Volume2, VolumeX } from 'lucide-react';
 
 const Hero = () => {
+    const iframeRef = useRef(null);
+    const [isMuted, setIsMuted] = useState(true);
+
+    const toggleMute = () => {
+        if (iframeRef.current && iframeRef.current.contentWindow) {
+            if (isMuted) {
+                iframeRef.current.contentWindow.postMessage('{"event":"command","func":"unMute","args":""}', '*');
+            } else {
+                iframeRef.current.contentWindow.postMessage('{"event":"command","func":"mute","args":""}', '*');
+            }
+            setIsMuted(!isMuted);
+        }
+    };
+
     return (
         <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
             {/* Video Background */}
-            <div className="absolute inset-0 z-0">
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover"
-                >
-                    <source src="/hero-background.mp4" type="video/mp4" />
-                </video>
+            <div className="absolute inset-0 z-0 overflow-hidden bg-black">
+                {/* Fallback color/image while iframe loads */}
+                <iframe
+                    ref={iframeRef}
+                    className="w-full h-full"
+                    style={{ pointerEvents: 'none', transform: 'scale(1.5)' }}
+                    src="https://www.youtube.com/embed/84BJHPumXtc?autoplay=1&mute=1&loop=1&playlist=84BJHPumXtc&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+                    title="Background Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                ></iframe>
                 {/* Overlay to ensure text readability */}
-                <div className="absolute inset-0 bg-gray-900/80" />
+                <div className="absolute inset-0 bg-gray-900/40" />
             </div>
             {/* Background Glows */}
             <div className="absolute top-1/4 -left-20 w-96 h-96 bg-neon-blue/20 rounded-full blur-[128px]" />
@@ -118,7 +133,7 @@ const Hero = () => {
                             </div>
                         </motion.div>
                         <motion.a
-                            href="/design"
+                            href="/ai-animation"
                             animate={{ y: [0, -8, 0] }}
                             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                             className="absolute top-1/2 -right-8 md:-right-16 bg-white/90 dark:bg-dark-card border border-gray-200 dark:border-white/10 p-3 md:p-4 rounded-xl shadow-lg flex items-center gap-3 backdrop-blur-md hover:border-neon-purple/50 transition-colors group cursor-pointer z-20"
@@ -127,13 +142,21 @@ const Hero = () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
                             </div>
                             <div>
-                                <div className="font-bold text-md md:text-lg text-gray-900 dark:text-white group-hover:text-neon-purple transition-colors">Graphic Design</div>
+                                <div className="font-bold text-md md:text-lg text-gray-900 dark:text-white group-hover:text-neon-purple transition-colors">AI Artist Producer</div>
                                 <div className="text-xs md:text-sm text-gray-600 dark:text-gray-400 font-medium whitespace-nowrap">View Services</div>
                             </div>
                         </motion.a>
                     </div>
                 </motion.div>
             </div>
+            {/* Audio Toggle Button */}
+            <button
+                onClick={toggleMute}
+                className="absolute bottom-8 right-8 z-50 p-3 md:p-4 bg-black/40 hover:bg-black/70 backdrop-blur-md rounded-full text-white transition-all border border-white/10 hover:border-neon-blue/50 group shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+                aria-label="Toggle Audio"
+            >
+                {isMuted ? <VolumeX size={24} className="text-gray-400 group-hover:text-white" /> : <Volume2 size={24} className="text-neon-blue drop-shadow-[0_0_8px_rgba(0,243,255,0.8)]" />}
+            </button>
         </section>
     );
 };

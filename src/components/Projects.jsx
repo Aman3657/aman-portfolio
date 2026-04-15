@@ -19,6 +19,14 @@ const projects = [
         tech: ['Custom PHP', 'WordPress', 'Gemini', 'Code Snippets'],
         link: 'http://jobbinge.in',
         image: 'https://placehold.co/600x400/1a1a2e/FFF?text=Dashboard+System'
+    },
+    {
+        title: 'OPDSure AI Videos',
+        category: 'AI Media & Animation',
+        description: 'Produced engaging AI video content for OPDSure highlighting health-tech and employee wellness solutions.',
+        tech: ['AI Video', 'Content Production', 'Animation'],
+        link: 'https://www.linkedin.com/posts/opdsure_healthtech-employeewellness-opdsure-activity-7418140031506190336-SrSi?utm_source=share&utm_medium=member_desktop&rcm=ACoAAECDwrYBzqC9_QHKa-hpugiaRD5l7oN48c4',
+        image: 'https://placehold.co/600x400/2a2a3e/FFF?text=OPDSure+AI+Videos'
     }
 ];
 
